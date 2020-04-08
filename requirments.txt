@@ -1,0 +1,2 @@
+requests : https://github.com/psf/requests
+beautifulsoup : https://www.crummy.com/software/BeautifulSoup/bs4/doc.ko/
