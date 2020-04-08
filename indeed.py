@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 LIMIT = 50
 URL = f"https://kr.indeed.com/jobs?q=python&limit={LIMIT}"
 
-
 def extract_indeed_pages():
     result = requests.get(URL)
     soup = BeautifulSoup(result.text, 'html.parser')
@@ -52,4 +51,10 @@ def extract_indeed_jobs(last_page):
     results = soup.find_all("div", {"class": "jobsearch-SerpJobCard"})
     for result in results:
         jobs.append(extract_job(result))
+  return jobs
+
+
+def get_jobs():
+  last_page = extract_indeed_pages()
+  jobs = extract_indeed_jobs(last_page)
   return jobs
