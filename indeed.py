@@ -45,7 +45,7 @@ def extract_job(html):
 def extract_indeed_jobs(last_page):
   jobs = []
   for page in range(last_page):
-    print(f"Scrapping page {page}")
+    print(f"Scraping indeed page : {page}")
     result = requests.get(f"{URL}&START={LIMIT*page}")
     soup = BeautifulSoup(result.text, 'html.parser')
     results = soup.find_all("div", {"class": "jobsearch-SerpJobCard"})
